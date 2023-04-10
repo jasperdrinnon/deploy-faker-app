@@ -1,17 +1,17 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-const low = require('lowdb');
-const fs = require('lowdb/adapters/FileSync');
+import low from 'lowdb';
+import fs from 'lowdb/adapters/FileSync';
 const adapter = new fs('db.json');
 const db = low(adapter);
-const cors = require('cors');
-const { faker } = require('@faker-js/faker');
+import cors from 'cors'
+import faker from '@faker-js/faker';
 
 // allow cross-origin resource sharing (CORS)
 app.use(cors());
 
 // data parser - used to parse post data
-var bodyParser = require('body-parser');
+import bodyParser from 'bodyParser';
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
