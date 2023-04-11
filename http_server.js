@@ -1,11 +1,11 @@
-import express from 'express';
+const express = require('express');
 const app = express();
-import low from 'lowdb';
-import fs from 'lowdb/adapters/FileSync';
+const low = require('lowdb');
+const fs = require('lowdb/adapters/FileSync');
 const adapter = new fs('db.json');
 const db = low(adapter);
-import cors from 'cors'
-import faker from '@faker-js/faker';
+const cors = require('cors');
+const { faker } = require('@faker-js/faker');
 
 // allow cross-origin resource sharing (CORS)
 app.use(cors());
